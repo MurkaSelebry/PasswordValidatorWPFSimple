@@ -1,0 +1,57 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    
+        xmlns:local="clr-namespace:PasswordValidatorWPFSimple"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="PasswordValidatorWPFSimple.MainWindow"
+        xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height ="*"/>
+                <RowDefinition Height ="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Background="#FFA6E28C">
+                <Label Content="-PasswordBox-" FontSize="50" FontWeight="Bold" HorizontalAlignment="Center"  VerticalAlignment="Top"/>
+                <TextBox TextWrapping="Wrap" Margin="20,0,20,0" Width="Auto" Height="40" MinHeight="40"/>
+                <WrapPanel HorizontalAlignment="Center" Margin="0,20,0,0">
+                    <Button Content="Button" HorizontalAlignment="Center"  VerticalAlignment="Bottom" MinWidth="100" MinHeight="60" Margin="0,0,60,0" />
+                    <Button Content="Button" HorizontalAlignment="Center"  VerticalAlignment="Bottom" MinWidth="100" MinHeight="60"/>
+                </WrapPanel>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Background="#FFC3AAF1">
+                <Label Content="-Scratch TextBox-" FontSize="50" FontWeight="Bold" HorizontalAlignment="Center"  VerticalAlignment="Top"/>
+                <TextBox TextWrapping="Wrap" Margin="20,0,20,0" Width="Auto" Height="40" MinHeight="40"/>
+                <WrapPanel HorizontalAlignment="Center" Margin="0,20,0,0">
+                    <Button Content="Button" HorizontalAlignment="Center"  VerticalAlignment="Bottom" MinWidth="100" MinHeight="60"/>
+                </WrapPanel>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1">
+            <StackPanel x:Name="Stack1">
+                <Label Content="Change Count" FontSize="20"  HorizontalAlignment="Center"/>
+                <Label Content="0" FontSize="20"  HorizontalAlignment="Center"/>
+                <Label Content="Masking character" FontSize="20"  HorizontalAlignment="Center"/>
+                <ComboBox >
+                    <Label Content="dsa"/>
+                    <Label Content="dsa1"/>
+                    <Label Content="dsa2"/>
+
+                </ComboBox>
+                <Label Content="Max Input Lenght" FontSize="20"  HorizontalAlignment="Center"/>
+                <Label Content="Currently max Lenght" FontSize="20"  HorizontalAlignment="Center"/>
+                <Label Content="Unlimited" FontSize="20"  HorizontalAlignment="Center"/>
+            </StackPanel>
+
+
+        </Grid>
+    </Grid>
+</Window>
