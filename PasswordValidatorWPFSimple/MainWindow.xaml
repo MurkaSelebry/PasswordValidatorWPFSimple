@@ -21,17 +21,17 @@
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0" Background="#FFA6E28C">
                 <Label Content="-PasswordBox-" FontSize="50" FontWeight="Bold" HorizontalAlignment="Center"  VerticalAlignment="Top"/>
-                <TextBox TextWrapping="Wrap" Margin="20,0,20,0" Width="Auto" Height="40" MinHeight="40"/>
+                <PasswordBox x:Name="pswdBox" Width="Auto" Height="40" Margin="20,0,20,0" FontSize="15" PasswordChanged="pswdBox_PasswordChanged"/>
                 <WrapPanel HorizontalAlignment="Center" Margin="0,20,0,0">
-                    <Button Content="Button" HorizontalAlignment="Center"  VerticalAlignment="Bottom" MinWidth="100" MinHeight="60" Margin="0,0,60,0" />
-                    <Button Content="Button" HorizontalAlignment="Center"  VerticalAlignment="Bottom" MinWidth="100" MinHeight="60"/>
+                    <Button Content="Clear" HorizontalAlignment="Center"  VerticalAlignment="Bottom" MinWidth="100" MinHeight="60" Margin="0,0,60,0" Click="Clear_Click"  />
+                    <Button Content="Paste Into" HorizontalAlignment="Center"  VerticalAlignment="Bottom" MinWidth="100" MinHeight="60" Click="Paste_Click"/>
                 </WrapPanel>
             </StackPanel>
             <StackPanel Grid.Row="1" Background="#FFC3AAF1">
                 <Label Content="-Scratch TextBox-" FontSize="50" FontWeight="Bold" HorizontalAlignment="Center"  VerticalAlignment="Top"/>
-                <TextBox TextWrapping="Wrap" Margin="20,0,20,0" Width="Auto" Height="40" MinHeight="40"/>
+                <TextBox x:Name="scratchTB" TextWrapping="Wrap" Margin="20,0,20,0" Width="Auto" Height="40" MinHeight="40" FontSize="15"/>
                 <WrapPanel HorizontalAlignment="Center" Margin="0,20,0,0">
-                    <Button Content="Button" HorizontalAlignment="Center"  VerticalAlignment="Bottom" MinWidth="100" MinHeight="60"/>
+                    <Button Content="Copy To" HorizontalAlignment="Center"  VerticalAlignment="Bottom" MinWidth="100" MinHeight="60" Click="Copy_Click"/>
                 </WrapPanel>
             </StackPanel>
         </Grid>
@@ -40,14 +40,20 @@
                 <Label Content="Change Count" FontSize="20"  HorizontalAlignment="Center"/>
                 <Label Content="0" FontSize="20"  HorizontalAlignment="Center"/>
                 <Label Content="Masking character" FontSize="20"  HorizontalAlignment="Center"/>
-                <ComboBox >
-                    <Label Content="dsa"/>
-                    <Label Content="dsa1"/>
-                    <Label Content="dsa2"/>
+                <ComboBox SelectionChanged="ComboBox_SelectionChanged" >
+                    <System:String>!</System:String>
+                    <System:String>@</System:String>
+                    <System:String>#</System:String>
+                    <System:String>$</System:String>
+                    <System:String>%</System:String>
+                    <System:String>^</System:String>
+                    <System:String>&amp;</System:String>
+                    <System:String>*</System:String>
+                    <System:String>●</System:String>
 
                 </ComboBox>
                 <Label Content="Max Input Lenght" FontSize="20"  HorizontalAlignment="Center"/>
-                <Label Content="Currently max Lenght" FontSize="20"  HorizontalAlignment="Center"/>
+                <Label Content="Currently Max Len" FontSize="20"  HorizontalAlignment="Center"/>
                 <Label Content="Unlimited" FontSize="20"  HorizontalAlignment="Center"/>
             </StackPanel>
 

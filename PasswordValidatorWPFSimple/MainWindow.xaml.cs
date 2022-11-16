@@ -30,29 +30,52 @@ namespace PasswordValidatorWPFSimple
             integerUpDown.Maximum = 255;
             integerUpDown.Watermark = "Unlimited";
             integerUpDown.ValueChanged += new RoutedPropertyChangedEventHandler<object>(integerUpDown_ValueChanged);
-            integerUpDown.TextInput += new TextCompositionEventHandler(text_changed);
-           
-            
-
         }
 
-        private void text_changed(object sender, TextCompositionEventArgs e)
-        {
-            System.Windows.MessageBox.Show("123");
-        }
 
         private void integerUpDown_ValueChanged(object sender, EventArgs e)
         {
             var integerUpDown = Stack1.Children[5] as IntegerUpDown;
-            
             if(integerUpDown.Value != null)
             {
-                System.Windows.MessageBox.Show("123");
+                pswdBox.MaxLength = integerUpDown.Value.Value;
+                (Stack1.Children[7] as Label).Content = integerUpDown.Value.ToString();
             }
             else
             {
-                
+                integerUpDown.Watermark = "Unlimited";
+                (Stack1.Children[7] as Label).Content = "Unlimited";
+                pswdBox.MaxLength = 0;
             }
+
+        }
+
+        private void Copy_Click(object sender, RoutedEventArgs e)
+        {
+            scratchTB.SelectAll();
+            scratchTB.Copy();
+
+        }
+
+        private void Paste_Click(object sender, RoutedEventArgs e)
+        {
+            pswdBox.Paste();
+        }
+
+        private void Clear_Click(object sender, RoutedEventArgs e)
+        {
+            pswdBox.Clear();
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            pswdBox.PasswordChar = Convert.ToChar((sender as ComboBox).SelectedItem);
+        }
+
+        private void pswdBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            (Stack1.Children[1] as Label).Content = Convert.ToInt32((Stack1.Children[1] as Label).Content) + 1;
+ 
         }
     }
 }
